@@ -14,7 +14,7 @@ jobs:
         env:
           SIGRID_CI_ACCOUNT: "${{ secrets.SIGRID_CI_ACCOUNT }}"
           SIGRID_CI_TOKEN: "${{ secrets.SIGRID_CI_TOKEN }}"
-        run: "./sigridci/sigridci/sigridci.py --customer examplecustomername --system examplesystemname --source . --targetquality 3.0 --publish" 
+        run: "./sigridci/sigridci/sigridci.py --customer ssm --system jasper --source . --targetquality 3.0 --publish" 
       - name: "Save Sigrid CI results"
         if: ${{ success() || failure() }}
         uses: actions/upload-artifact@v2
